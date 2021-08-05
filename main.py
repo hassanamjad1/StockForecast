@@ -9,7 +9,9 @@ import pandas as pd
 import pandas_datareader.data as web
 import datetime as dt
 
-
+from sklearn.preprocessing import MinMaxScaler
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Dropout, LSTM
 
 
 # loading data
@@ -22,3 +24,5 @@ data = web.DataReader(company, 'yahoo', start, end)
 
 # prepare date
 scaler = MinMaxScaler(feature_range = (0,1))
+
+
